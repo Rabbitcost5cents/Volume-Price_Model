@@ -329,10 +329,7 @@ def apply_price_history(df, price_history_df=None):
             )
             df.loc[mask, 'current_price'] += ph['price_delta']
     else:
-        # 回退：硬编码价格历史
-        mask_v50 = (df['model_key'].str.contains('v50', case=False)) & \
-                   (df['date'] >= '2025-06-14')
-        df.loc[mask_v50, 'current_price'] -= 2000
+        logger.warning("apply_price_history: no price history data available; prices left unchanged.")
     return df
 
 

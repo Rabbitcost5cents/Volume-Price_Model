@@ -456,6 +456,5 @@ if __name__ == '__main__':
     init_db()
     with _conn() as conn:
         for table in _ALLOWED_TABLES:
-            assert table in _ALLOWED_TABLES, f"Unexpected table name: {table}"
             count = pd.read_sql(f"SELECT COUNT(*) as cnt FROM {table}", conn)['cnt'][0]
             print(f"  {table}: {count} rows")

@@ -7,13 +7,16 @@ import hashlib
 import hmac
 import logging
 import subprocess
+import os
+import sys
+
+# 将工作目录锚定到项目根目录，确保 'models/' 和 'data/' 相对路径在任何启动方式下均可解析
+os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 _logger = logging.getLogger(__name__)
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import timedelta
-import os
-import sys
 
 from data_processor_v2 import get_integrated_dataset
 from bass_engine import BassEngine, bass_S

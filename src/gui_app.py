@@ -12,11 +12,15 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import numpy as np
 from datetime import timedelta
-from data_processor_v2 import get_integrated_dataset
 import sys
 import os
 import threading
 import queue as _queue
+
+# 将工作目录锚定到项目根目录，确保 'models/' 和 'data/' 相对路径在任何启动方式下均可解析
+os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from data_processor_v2 import get_integrated_dataset
 
 logger = logging.getLogger(__name__)
 
