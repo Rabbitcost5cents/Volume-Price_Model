@@ -205,3 +205,36 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ── Volume-Price_Model project-specific ──────────────────────────────────────
+
+# Raw business data (never commit real sales data)
+data/
+
+# Trained model artifacts (generated, can be large)
+models/xgb_model.json
+models/xgb_model.json.bak
+models/xgb_cold_start.json
+models/xgb_cold_start.json.bak
+models/feature_cols.json
+models/feature_cols.json.bak
+models/feature_cols_cold.json
+models/cold_start_cols.json
+models/cold_start_cols.json.bak
+models/test_results.csv
+models/bass_params.json
+
+# Sensitive config (passwords, user presets, UI state)
+models/admin.json
+models/user_configs.json
+models/ui_settings.json
+
+# Runtime logs
+*.log
+
+# IDE
+.idea/
+.vscode/
+
+# src/models/ — same artifacts under src directory
+src/models/
